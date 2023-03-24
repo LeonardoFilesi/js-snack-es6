@@ -16,14 +16,26 @@ const bikesArray = [
     },
 ];
 // debug
-console.log(bikesArray);
+console.table(bikesArray);
 // calcolo quale, dall'Array, è la bicicletta col valore "peso" più basso
 // stabilisco prima una variabile che comprende solo il valore del peso
-let pesoBikesArray = bikesArray.peso;
+/* let pesoBikesArray = bikesArray.peso;
 let pesoMinimoArray = Math.min(pesoBikesArray);
-console.log(pesoMinimoArray);
+console.log(pesoMinimoArray); */
+let lightBike = bikesArray[0];
+// console.log('light', lightBike);
+
+bikesArray.forEach((element) =>{
+    // console.log(element);
+    if (element.peso < lightBike.peso)
+    lightBike = element;
+});
+
+console.log(lightBike);
+
+
 // e la stampo
-document.getElementsByClassName("exercise1-results").innerHTML = `${pesoMinimoArray}`;
+document.getElementById("exercise1-results").innerHTML = `La bicicletta che pesa di meno, è la ${lightBike.nome} e pesa ${lightBike.peso} Kg`;
 
 // ESERCIZIO SQUADRE DI CALCIO
 // stabilisco un Array di squadre di calcio specificandone
@@ -33,23 +45,23 @@ document.getElementsByClassName("exercise1-results").innerHTML = `${pesoMinimoAr
 // ma attribuirò 0 a questi ultimi due fattori
 const footballSquads = [
     {
-        nome: "Lazio",
+        squadName: "Lazio",
         puntiFatti: 0,
         falliSubiti: 0,
     },    {
-        nome: "Roma",
+        squadName: "Roma",
         puntiFatti: 0,
         falliSubiti: 0,
     },    {
-        nome: "Sampdoria",
+        squadName: "Sampdoria",
         puntiFatti: 0,
         falliSubiti: 0,
     },    {
-        nome: "Napoli",
+        squadName: "Napoli",
         puntiFatti: 0,
         falliSubiti: 0,
     },    {
-        nome: "Salernitana",
+        squadName: "Salernitana",
         puntiFatti: 0,
         falliSubiti: 0,
     }, 
@@ -58,14 +70,29 @@ const footballSquads = [
  /* const punti = Math.floor(Math.random() * 12) + 1;
 
  const falli = Math.floor(Math.random() * 12) + 1; */
-
+/* 
  for (let i = 0; i < footballSquads.length; i++) {
-    footballSquads[i].puntiFatti = Math.floor(Math.random() * 12) + 1;
+    
     footballSquads[i].falliSubiti = Math.floor(Math.random() * 12) + 1;
- }
+ } */
 
- const footballSquadsStat = footballSquads.map (({nome, falliSubiti}) => ({nome, falliSubiti}));
- console.log(footballSquadsStat);
+ footballSquads.forEach((team) => {
+    team.puntiFatti = Math.floor(Math.random() * 12) + 1;
+    team.falliSubiti = Math.floor(Math.random() * 12) + 1;
+    // console.log(team);
+});
+console.table(footballSquads);
 
+
+const footballSquadsStat = footballSquads.map (({squadName, falliSubiti}) => ({squadName, falliSubiti}));
+console.table(footballSquadsStat);
  
- document.getElementsByClassName("exercise2-results").innerHTML = `${footballSquadsStat}`;
+/*  */
+
+footballSquadsStat.forEach((teamStats) => {
+    document.getElementById("exercise2-results").innerHTML += `<div>La squadra ${teamStats.squadName} ha subito ${teamStats.falliSubiti} falli</div>`;
+});
+
+// forEach 
+// map [stesso n items ]
+// filter [0 a n item]
