@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-container {
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(35, 86, 145);
+    color: rgb(170, 165, 165);
+    display: flex;
+    padding: 10px 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.main-container {
+    height: 60vh;
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgb(41, 62, 87);
+    color: rgb(170, 165, 165);
+    border-radius: 40px;
+}
