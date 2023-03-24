@@ -4,11 +4,19 @@
     box-sizing: border-box;
 }
 
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
 .header-container {
     height: 10vh;
     width: 100%;
     background-color: rgb(35, 86, 145);
-    color: rgb(170, 165, 165);
+    color: rgb(209, 203, 203);
     display: flex;
     padding: 10px 30px;
     justify-content: center;
@@ -20,6 +28,13 @@
     width: 70%;
     margin: 0 auto;
     background-color: rgb(41, 62, 87);
-    color: rgb(170, 165, 165);
+    color: rgb(209, 203, 203);
     border-radius: 40px;
+}
+
+.container-column {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    
 }
