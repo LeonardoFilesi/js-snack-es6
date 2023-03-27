@@ -17,11 +17,14 @@ const bikesArray = [
 ];
 // debug
 console.table(bikesArray);
+
 // calcolo quale, dall'Array, è la bicicletta col valore "peso" più basso
 // stabilisco prima una variabile che comprende solo il valore del peso
+
 /* let pesoBikesArray = bikesArray.peso;
 let pesoMinimoArray = Math.min(pesoBikesArray);
 console.log(pesoMinimoArray); */
+
 let lightBike = bikesArray[0];
 // console.log('light', lightBike);
 
@@ -96,3 +99,28 @@ footballSquadsStat.forEach((teamStats) => {
 // forEach 
 // map [stesso n items ]
 // filter [0 a n item]
+
+// ESERCIZIO BONUS
+ const myArray = ["Michele", "Fabio", "Roberto", "Giovanni", "Simone", "Chiara"];
+ const min = 2;
+ const max = 4;
+
+ const newArrat = getSubArray(myArray, min, max);
+
+ function getSubArray(arrayToCheck, minIndex, maxIndex) {
+    // Per ogni elemente
+    // pernderne l'indice
+    // se l'indice p compreso tra min e max
+    // pusho l'elemento nell'array risultante
+
+    // Ciclo for
+    const result = [];
+    for(let i = 0; i < arrayToCheck.lenght; i++) {
+        if(i >= minIndex && i<=maxIndex ) {
+           result.push(arrayToCheck[i]);
+        }
+    }
+
+    // Filter
+    // esiste una opzione con filter, che non sono riuscito a seguire
+ }
